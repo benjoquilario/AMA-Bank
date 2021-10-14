@@ -1,0 +1,541 @@
+.movements__pay__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main, .movement__container .operations .operation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login, .movement__container .balance, .movements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.movement__container .operations .form--loan, .movement__container .operations .form--transfer, .movement__container .operations .form--close {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  grid-gap: 0.4rem 1.5rem;
+  padding: 12px;
+  border: 1px solid #fff;
+}
+
+body::after, body::before {
+  content: "";
+  position: absolute;
+  background-color: #8e0404;
+  z-index: -1;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #fafafa;
+  color: #2c2e2f;
+  font-size: 100%;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+body::after {
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 400px;
+  border-radius: 50px 0px 0px 340px;
+}
+
+@media screen and (max-width: 768px) {
+  body::after {
+    width: 200px;
+    height: 40%;
+  }
+}
+
+body::before {
+  bottom: 0;
+  left: 0;
+  height: 40%;
+  width: 170px;
+  border-radius: 0px 220px 0px 0px;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+@-webkit-keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+  100% {
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+  100% {
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+  }
+}
+
+.main {
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 3rem;
+}
+
+.form__container {
+  position: relative;
+  margin: auto;
+  max-width: 340px;
+  height: 313px;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-box-shadow: -1px 0 37px 1px rgba(0, 0, 0, 0.12);
+          box-shadow: -1px 0 37px 1px rgba(0, 0, 0, 0.12);
+}
+
+.form__container.form__containerTop {
+  position: absolute;
+  top: -1000px;
+  -webkit-transition: top 1s ease-in;
+  transition: top 1s ease-in;
+}
+
+.btn {
+  position: relative;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.btn:focus:focus {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.btn--form {
+  background-color: transparent;
+  color: #fff;
+  width: 35px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 17px;
+  border: 1px solid #fff;
+  -webkit-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+}
+
+.btn--form:hover {
+  background-color: #fff;
+  color: #2c2e2f;
+}
+
+.login {
+  padding: 28px 20px;
+  height: 100%;
+  border: 2px solid #eaeced;
+}
+
+.login__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+}
+
+.login__logo {
+  width: 160px;
+  height: 45px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 90px 1fr;
+      grid-template-columns: 90px 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login__logo--image {
+  width: 90px;
+}
+
+.login__logo--text {
+  font-size: 23px;
+  color: #8e0404;
+  font-weight: bold;
+}
+
+.login__input {
+  width: 200px;
+  height: 40px;
+  border: 2px solid #94969775;
+  border-radius: 5px;
+  outline: none;
+  padding: 5px 20px;
+  margin-bottom: 14px;
+  -webkit-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+  width: 100%;
+}
+
+.login__input:focus {
+  outline: none;
+  border: 2px solid #8e0404;
+}
+
+.login__btn {
+  position: relative;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px;
+  background-color: #8e0404;
+  border-radius: 50px;
+  color: #fff;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.login__btn:focus {
+  outline: none;
+  -webkit-box-shadow: inset 0 -0.25rem 0 rgba(0, 0, 0, 0.1), 0 0 1px 0.15rem #fff, 0 0 1px 0.3rem #8e0404;
+          box-shadow: inset 0 -0.25rem 0 rgba(0, 0, 0, 0.1), 0 0 1px 0.15rem #fff, 0 0 1px 0.3rem #8e0404;
+}
+
+.login__btn:focus-visible {
+  -webkit-box-shadow: inset 0 -0.25rem 0 rgba(0, 0, 0, 0.1), 0 0 1px 0.15rem #fff, 0 0 1px 0.3rem #8e0404;
+          box-shadow: inset 0 -0.25rem 0 rgba(0, 0, 0, 0.1), 0 0 1px 0.15rem #fff, 0 0 1px 0.3rem #8e0404;
+}
+
+.login__btn:hover {
+  background-color: #8e0404ad;
+  opacity: 0.9;
+}
+
+.login__btn:hover .login__btn--text {
+  margin-right: 15px;
+}
+
+.login__btn--text {
+  font-size: 14px;
+  margin-right: 10px;
+  -webkit-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+}
+
+.login__btn--arrow {
+  font-size: 16px;
+}
+
+.login__seperator {
+  position: relative;
+  width: 100%;
+  border: 1px solid #cbd2d6;
+  margin-top: 20px;
+  height: 15px;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.heading {
+  color: #fff;
+}
+
+.heading--xl {
+  font-size: 16px;
+  margin-bottom: 10px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+@media screen and (max-width: 768px) {
+  .heading--xl {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+.heading__name {
+  text-align: left;
+  font-size: 21px;
+  margin-bottom: 10px;
+  padding-left: 70px;
+  opacity: 0;
+}
+
+.heading__name .name {
+  font-size: 22px;
+}
+
+.movement__container {
+  position: absolute;
+  top: -1000px;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  max-width: 806px;
+  height: 563px;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-box-shadow: -1px 0 37px 1px rgba(0, 0, 0, 0.12);
+          box-shadow: -1px 0 37px 1px rgba(0, 0, 0, 0.12);
+}
+
+.movement__container.show {
+  position: relative;
+  top: 0;
+  opacity: 1;
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .movement__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 100%;
+    height: 100%;
+  }
+}
+
+.movement__container .operations {
+  width: clamp(200px, 50vw, 348px);
+  height: 100%;
+  background-color: #8e0404;
+}
+
+@media screen and (max-width: 768px) {
+  .movement__container .operations {
+    width: 100%;
+  }
+}
+
+.movement__container .operations .operation {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #fff;
+  padding: 10px;
+}
+
+.movement__container .operations .form--loan {
+  -ms-grid-columns: 178px 100px;
+      grid-template-columns: 178px 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .movement__container .operations .form--loan {
+    -ms-grid-columns: 100px 100px;
+        grid-template-columns: 100px 100px;
+  }
+}
+
+.movement__container .operations .form--transfer, .movement__container .operations .form--close {
+  -ms-grid-columns: 120px 120px 1fr;
+      grid-template-columns: 120px 120px 1fr;
+}
+
+@media screen and (max-width: 768px) {
+  .movement__container .operations .form--transfer, .movement__container .operations .form--close {
+    -ms-grid-columns: 100px 100px 1fr;
+        grid-template-columns: 100px 100px 1fr;
+  }
+}
+
+.movement__container .operations .form__input {
+  padding: 0 12px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #fff;
+  font-size: 18px;
+  font-weight: 500;
+  color: #2c2e2f;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.movement__container .operations .form__input:focus {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.movement__container .balance {
+  height: 152px;
+  width: 100%;
+  padding: 20px 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #fff;
+}
+
+.movement__container .balance__label {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.movement__container .balance__date {
+  font-size: 12px;
+}
+
+.movement__container .balance__value {
+  font-size: 30px;
+}
+
+.movements {
+  width: 100%;
+}
+
+.movements__logo {
+  padding: 10px 0;
+}
+
+.movements__logo--img {
+  width: 101px;
+  height: 56px;
+}
+
+.movements__pay {
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+@media screen and (max-width: 768px) {
+  .movements__pay {
+    height: 500px;
+  }
+}
+
+.movements__pay__row {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 15px 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .movements__pay__row {
+    padding: 15px 14px;
+  }
+}
+
+.movements__pay--deposit {
+  background-color: #8e0404;
+}
+
+.movements__pay--withdrawal {
+  background-color: #228b22;
+}
+
+.movements__pay__type {
+  font-size: clamp(11px, 5vw, 13px);
+  text-transform: uppercase;
+  color: #fff;
+  padding: 2px 18px;
+  margin-right: 10px;
+  border-radius: 40px;
+  font-weight: 700;
+}
+
+.movements__pay__date {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.movements__pay__value {
+  font-size: 20px;
+  margin-left: auto;
+}
+/*# sourceMappingURL=style.css.map */
