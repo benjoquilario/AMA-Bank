@@ -43,7 +43,7 @@
 }
 
 body::after, body::before {
-  content: "";
+  content: '';
   position: absolute;
   background-color: #8e0404;
   z-index: -1;
@@ -71,7 +71,7 @@ body {
   background-color: #fafafa;
   color: #2c2e2f;
   font-size: 100%;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
 
@@ -79,7 +79,7 @@ body::after {
   top: 0;
   right: 0;
   height: 100%;
-  width: 400px;
+  width: 220px;
   border-radius: 50px 0px 0px 340px;
 }
 
@@ -144,6 +144,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-bottom: 40px;
 }
 
 .container {
@@ -312,7 +313,7 @@ a {
   height: 15px;
 }
 
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
@@ -342,10 +343,17 @@ input::-webkit-inner-spin-button {
 }
 
 .heading__name {
-  text-align: left;
   font-size: 21px;
-  margin-bottom: 10px;
   padding-left: 70px;
+  max-width: 806px;
+  margin: 10px auto;
+  background-color: #8e0404;
+  color: #fff;
+  -webkit-box-shadow: -1px 0 37px 1px rgba(0, 0, 0, 0.12);
+          box-shadow: -1px 0 37px 1px rgba(0, 0, 0, 0.12);
+  padding: 6px 0px;
+  border-radius: 10px;
+  text-align: center;
   opacity: 0;
 }
 
@@ -512,15 +520,15 @@ input::-webkit-inner-spin-button {
 }
 
 .movements__pay--deposit {
-  background-color: #8e0404;
-}
-
-.movements__pay--withdrawal {
   background-color: #228b22;
 }
 
+.movements__pay--withdrawal {
+  background-color: #8e0404;
+}
+
 .movements__pay__type {
-  font-size: clamp(11px, 5vw, 13px);
+  font-size: clamp(9px, 5vw, 11px);
   text-transform: uppercase;
   color: #fff;
   padding: 2px 18px;
